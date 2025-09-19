@@ -86,24 +86,24 @@ def plot_reconstruction(dataset, model, n=4):
     plt.show()
 
 
-    def plot_history(history, figsize=(8, 5)):
-        # Plot training & validation accuracy values
-        plt.figure(figsize=figsize)
+def plot_history(history, figsize=(8, 5)):
+    # Plot training & validation accuracy values
+    plt.figure(figsize=figsize)
 
-        plt.plot(history.history['reconstruction_loss'], label='Reconstruction Loss')
-        plt.plot(history.history['kl_loss'], label='KL Loss')
-        plt.plot(history.history['loss'], label='Training Loss')
-
-
-        # plt.plot(history.history['val_reconstruction_loss'], label='Reconstruction Loss')
-        # plt.plot(history.history['val_kl_loss'], label='KL Loss')
-        # plt.plot(history.history['val_loss'], label='Training Loss')
+    plt.plot(history.history['reconstruction_loss'], label='Reconstruction Loss')
+    plt.plot(history.history['kl_loss'], label='KL Loss')
+    plt.plot(history.history['loss'], label='Training Loss')
 
 
-        plt.title('Traininf')
-        plt.xlabel('Epoch')
-        plt.ylabel('Loss')
-        plt.legend()
+    # plt.plot(history.history['val_reconstruction_loss'], label='Reconstruction Loss')
+    # plt.plot(history.history['val_kl_loss'], label='KL Loss')
+    # plt.plot(history.history['val_loss'], label='Training Loss')
 
-        plt.tight_layout()
-        plt.show()
+
+    plt.title('Traininf')
+    plt.xlabel('Epoch')
+    plt.ylabel('Loss')
+    plt.legend()
+
+    plt.tight_layout()
+    plt.show()
