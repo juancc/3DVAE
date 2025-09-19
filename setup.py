@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(
     name='VAE3D',
@@ -8,7 +8,7 @@ setup(
     author='Juan Carlos Arbelaez',
     author_email='jarbel16@eafit.edu.co',
     license= '',
-    packages=['VAE3D'],
+    packages= find_packages(include=['VAE3D', 'VAE3D.*']),
     install_requires=[
                       'tqdm',
                       'numpy',
@@ -30,4 +30,5 @@ setup(
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
     ],
+    python_requires='==3.11.*',
 )
