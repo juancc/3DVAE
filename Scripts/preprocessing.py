@@ -9,7 +9,7 @@ JCA
 
 """
 
-from VAE3D.auxfunc import models3d as aux3dmodel
+from VAE3D.utils import models3d as aux3dmodel
 
 
 DATASET_PATH = '/Users/jarbel16/Downloads/ModelNet10/chair/train/'
