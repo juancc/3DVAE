@@ -18,8 +18,6 @@ setup(
                       'trimesh',
                       'tensorflow',
                       'keras',
-                      'sklearn'
-
                       ],
     classifiers=[
         'Development Status :: 1 - Alpha',
