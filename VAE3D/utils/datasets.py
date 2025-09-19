@@ -3,8 +3,6 @@ Dataset auxliary functions
 
 """
 
-
-
 import os
 import numpy as np
 from sklearn.model_selection import train_test_split
@@ -27,7 +25,8 @@ def pad_to_cube(voxel, target_shape=(32, 32, 32)):
     padded[slices_out] = voxel[slices_in]
     return padded
 
-def load_voxel_dataset(npy_dir, target_shape=(32, 32, 32), test_size=0.2, random_state=42):
+
+def load_voxel_dataset(npy_dir, target_shape=(32, 32, 32), test_size=0.2, random_state=42, batch_size=32):
     """
     Load voxel .npy files, pad them into a fixed cube, and return TF datasets.
     """
@@ -47,5 +46,10 @@ def load_voxel_dataset(npy_dir, target_shape=(32, 32, 32), test_size=0.2, random
 
     train_ds = tf.data.Dataset.from_tensor_slices(train_data)
     test_ds = tf.data.Dataset.from_tensor_slices(test_data)
+
+
+
+    train_ds = train_ds.shuffle(1000).batch(batch_size).prefetch(tf.data.AUTOTUNE)
+    test_ds = test_ds.batch(batch_size).prefetch(tf.data.AUTOTUNE)
 
     return train_ds, test_ds

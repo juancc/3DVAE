@@ -5,7 +5,7 @@ Plotting auxiliary functions
 import numpy as np
 import matplotlib.pyplot as plt
 
-from VAE3D.auxfunc.models3d import save_as_pointcloud
+from VAE3D.utils.models3d import save_as_pointcloud
 
 
 
