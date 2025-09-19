@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(
-    name='3DVAE',
+    name='VAE3D',
     version='0.0.1',    
     description='3D Vae for voxels generative design',
     url='https://github.com/juancc/3DVAE',
