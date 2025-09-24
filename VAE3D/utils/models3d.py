@@ -15,7 +15,7 @@ import numpy as np
 
 import open3d as o3d
 import os
-import tqdm
+from tqdm import tqdm
 
 
 def export_pascal3d(mat_file_path, save_dir, name):
